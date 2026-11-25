@@ -29,11 +29,11 @@ jobs:
       - name: Typecheck
         run: pnpm typecheck
 
-      - name: Unit tests
-        run: pnpm test
-
       - name: Generate (SSG)
         run: pnpm generate
+
+      - name: Unit tests
+        run: pnpm test
 
       - name: Install Playwright browsers
         run: pnpm exec playwright install --with-deps chromium
