@@ -35,6 +35,13 @@ export default tseslint.config(
     },
   },
   {
+    files: ['stryker.config.js'],
+    languageOptions: {
+      sourceType: 'commonjs',
+      globals: { module: 'readonly', require: 'readonly' },
+    },
+  },
+  {
     rules: {
       // Páginas legais renderizam HTML gerado pelo parser próprio e sanitizado
       // (todo texto é escapado antes de qualquer tag) — ver utils/legalMarkdown.ts
