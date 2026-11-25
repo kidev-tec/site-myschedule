@@ -11,14 +11,17 @@ export default tseslint.config(
   ...pluginVue.configs['flat/recommended'],
   {
     files: ['**/*.vue'],
-    languageOptions: {
-      parserOptions: { parser: tseslint.parser },
-      // Auto-imports do Nuxt (composables do framework)
-      globals: {
-        useHead: 'readonly',
-        ref: 'readonly',
-        computed: 'readonly',
-      },
+        languageOptions: {
+          parserOptions: { parser: tseslint.parser },
+          // Auto-imports do Nuxt (composables do framework)
+          globals: {
+            useHead: 'readonly',
+            ref: 'readonly',
+            computed: 'readonly',
+            setInterval: 'readonly',
+            clearInterval: 'readonly',
+            module: 'readonly',
+          },
     },
   },
   {
