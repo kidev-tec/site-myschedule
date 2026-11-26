@@ -5,7 +5,15 @@
   "private": true,
   "type": "module",
   "packageManager": "pnpm@12.21.0",
-  "pnpm": {},
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp",
+      "esbuild",
+      "@tailwindcss/oxide",
+      "unrs-resolver",
+      "protobufjs"
+    ]
+  },
   "engines": {
     "node": ">=24.6.0",
     "pnpm": ">=11.20.0"
