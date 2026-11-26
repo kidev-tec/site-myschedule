@@ -11,7 +11,8 @@
       "esbuild",
       "@tailwindcss/oxide",
       "unrs-resolver",
-      "protobufjs"
+      "protobufjs",
+      "@firebase/util"
     ]
   },
   "engines": {
