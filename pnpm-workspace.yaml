@@ -3,3 +3,7 @@ allowBuilds:
   sharp: true
   '@img/sharp-libvips-linux-x64': true
   vue-demi: true
+  '@firebase/util': true
+  protobufjs: true
+  '@tailwindcss/oxide': true
+
