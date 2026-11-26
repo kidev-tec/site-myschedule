@@ -5,7 +5,7 @@ import type { TenantsPage } from "~/lib/types-admin";
 import TenantStatusBadge from "~/components/admin/TenantStatusBadge.vue";
 import PaginationControl from "~/components/admin/PaginationControl.vue";
 
-definePageMeta({ ssr: false, middleware: "admin" });
+definePageMeta({ ssr: false, middleware: "admin", layout: "admin" });
 
 const page = ref(1);
 const pageSize = 25;

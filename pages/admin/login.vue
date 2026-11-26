@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import { useAuthStore } from "~/stores/auth";
 
-definePageMeta({ ssr: false });
+definePageMeta({ ssr: false, layout: "admin" });
 useHead({
   title: "Entrar — Painel AGENVA",
   meta: [{ name: "robots", content: "noindex" }],

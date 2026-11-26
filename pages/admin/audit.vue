@@ -4,7 +4,7 @@ import { api, ApiError } from "~/lib/api";
 import type { AuditPage } from "~/lib/types-admin";
 import PaginationControl from "~/components/admin/PaginationControl.vue";
 
-definePageMeta({ ssr: false, middleware: "admin" });
+definePageMeta({ ssr: false, middleware: "admin", layout: "admin" });
 
 const page = ref(1);
 const pageSize = 25;

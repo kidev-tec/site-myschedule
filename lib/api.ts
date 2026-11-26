@@ -4,7 +4,9 @@
  */
 import type { IdTokenResult } from "firebase/auth";
 
-export const API_BASE = (import.meta.env.NUXT_PUBLIC_API_BASE_URL ?? "") as string;
+import { adminEnv } from "./env";
+
+export const API_BASE = () => adminEnv().apiBaseUrl ?? "";
 
 export class ApiError extends Error {
   status: number;
@@ -33,7 +35,7 @@ async function request<T>(
     ...(init.headers as Record<string, string> | undefined),
   };
   if (token) headers.Authorization = `Bearer ${token.token}`;
-  const res = await fetch(`${API_BASE}${path}`, { ...init, headers });
+  const res = await fetch(`${API_BASE()}${path}`, { ...init, headers });
   const body = (await res.json().catch(() => ({}))) as Record<string, unknown>;
   if (!res.ok) {
     throw new ApiError(

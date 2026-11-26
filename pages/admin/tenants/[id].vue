@@ -4,7 +4,7 @@ import { api, ApiError } from "~/lib/api";
 import type { BillingInfo, TenantDetail } from "~/lib/types-admin";
 import TenantStatusBadge from "~/components/admin/TenantStatusBadge.vue";
 
-definePageMeta({ ssr: false, middleware: "admin" });
+definePageMeta({ ssr: false, middleware: "admin", layout: "admin" });
 
 const route = useRoute();
 const id = route.params.id as string;

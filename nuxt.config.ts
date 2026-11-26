@@ -13,6 +13,20 @@ export default defineNuxtConfig({
 
   modules: ['@pinia/nuxt'],
 
+  // RF-U4: runtimeConfig.public recebe NUXT_PUBLIC_* automaticamente (build E runtime).
+  runtimeConfig: {
+    public: {
+      firebaseApiKey: '',
+      firebaseAuthDomain: '',
+      firebaseProjectId: '',
+      firebaseAppId: '',
+      firebaseStorageBucket: '',
+      firebaseMessagingSenderId: '',
+      apiBaseUrl: '',
+      adminEmails: '',
+    },
+  },
+
   nitro: {
     prerender: {
       crawlLinks: false,
