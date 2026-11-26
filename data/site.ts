@@ -60,47 +60,48 @@ export const site = {
       title: 'Estética & Beleza',
       description:
         'Corte, escova, manicure — serviços com duração e preço já sugeridos, você só ajusta.',
-      image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80',
+      image: '/segments/estetica-beleza.webp',
     },
     {
       title: 'Barbearia',
       description: 'Corte máquina, barba, combo — agenda cheia sem conflito de horário.',
-      image: 'https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=600&q=80',
+      image: '/segments/barbearia.webp',
     },
     {
       title: 'Odontologia',
       description: 'Consulta, limpeza, avaliação: horários clínicos organizados por profissional.',
-      image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80',
+      image: '/segments/odontologia.webp',
     },
     {
       title: 'Medicina',
       description: 'Consulta e retorno com duração definida — sem sobreposição na sua rotina.',
-      image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80',
+      image: '/segments/medicina.webp',
     },
     {
       title: 'Estética Automotiva',
       description: 'Lavagem, polimento, higienização interna — serviços longos bloqueiam a agenda certa.',
-      image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80',
+      image: '/segments/estetica-automotiva.webp',
     },
     {
       title: 'Banho e Tosa',
       description: 'Banho e tosa por porte do pet, com histórico de cada cliente de quatro patas.',
-      image: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=600&q=80',
+      image: '/segments/banho-tosa.webp',
     },
     {
       title: 'Veterinária',
       description: 'Consulta e vacinação com lembrete pelo WhatsApp para o tutor não esquecer.',
-      image: 'https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=600&q=80',
+      image: '/segments/veterinaria.webp',
     },
     {
       title: 'Mecânica',
       description: 'Revisão e troca de óleo com tempo de serviço real — o cliente vê o horário livre de verdade.',
-      image: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=600&q=80',
+      image: '/segments/mecanica.webp',
     },
     {
       title: 'E qualquer outro serviço',
-      description: 'O app é multi-segmento: escolha o seu, receba serviços sugeridos e customize tudo por cima.',
-      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80',
+      description:
+        'O app é multi-segmento: escolha o seu, receba serviços sugeridos e customize tudo por cima.',
+      image: '/segments/autonoma-hero.webp',
     },
   ],
 
