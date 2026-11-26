@@ -32,7 +32,7 @@ describe('site.segments (carrossel multi-segmento)', () => {
     for (const s of site.segments) {
       expect(s.title.length).toBeGreaterThan(3)
       expect(s.description.length).toBeGreaterThan(20)
-      expect(s.image).toMatch(/^https:\/\//)
+      expect(s.image).toMatch(/^\/segments\/[a-z-]+\.webp$/)
     }
   })
 
