@@ -55,7 +55,11 @@ onBeforeUnmount(() => {
           <p class="mt-3 text-white/80">
             {{ slides[index]!.description }}
           </p>
-          <div class="mt-6 flex gap-2" role="tablist" aria-label="Segmentos">
+          <div
+            class="mt-6 flex gap-2"
+            role="tablist"
+            aria-label="Segmentos"
+          >
             <button
               v-for="(slide, i) in slides"
               :key="slide.title"
