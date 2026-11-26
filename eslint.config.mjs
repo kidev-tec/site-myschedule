@@ -4,7 +4,7 @@ import pluginVue from 'eslint-plugin-vue'
 import tseslint from 'typescript-eslint'
 
 export default tseslint.config(
-  { ignores: ['.nuxt/', '.output/', 'node_modules/', 'dist/', 'coverage/'] },
+  { ignores: ['.nuxt/', '.output/', 'node_modules/', 'dist/', 'coverage/', '.worktrees/'] },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   // DEPOIS do tseslint para que .vue use o vue-eslint-parser (com TS embutido)
@@ -13,14 +13,21 @@ export default tseslint.config(
     files: ['**/*.vue'],
         languageOptions: {
           parserOptions: { parser: tseslint.parser },
-          // Auto-imports do Nuxt (composables do framework)
+          // Auto-imports do Nuxt (composables do framework) + browser
           globals: {
             useHead: 'readonly',
             ref: 'readonly',
             computed: 'readonly',
             setInterval: 'readonly',
             clearInterval: 'readonly',
+            setTimeout: 'readonly',
+            clearTimeout: 'readonly',
             module: 'readonly',
+            definePageMeta: 'readonly',
+            navigateTo: 'readonly',
+            useRoute: 'readonly',
+            URLSearchParams: 'readonly',
+            window: 'readonly',
           },
     },
   },

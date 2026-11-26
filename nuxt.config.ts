@@ -11,12 +11,12 @@ export default defineNuxtConfig({
   ssr: true,
   css: ['~/assets/css/main.css'],
 
-  modules: [],
+  modules: ['@pinia/nuxt'],
 
   nitro: {
     prerender: {
       crawlLinks: false,
-      routes: ['/', '/privacidade', '/termos'],
+      routes: ['/', '/privacidade', '/termos', '/admin', '/admin/login', '/admin/audit'],
     },
   },
 
