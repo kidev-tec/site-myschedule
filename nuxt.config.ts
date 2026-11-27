@@ -11,12 +11,26 @@ export default defineNuxtConfig({
   ssr: true,
   css: ['~/assets/css/main.css'],
 
-  modules: [],
+  modules: ['@pinia/nuxt'],
+
+  // RF-U4: runtimeConfig.public recebe NUXT_PUBLIC_* automaticamente (build E runtime).
+  runtimeConfig: {
+    public: {
+      firebaseApiKey: '',
+      firebaseAuthDomain: '',
+      firebaseProjectId: '',
+      firebaseAppId: '',
+      firebaseStorageBucket: '',
+      firebaseMessagingSenderId: '',
+      apiBaseUrl: '',
+      adminEmails: '',
+    },
+  },
 
   nitro: {
     prerender: {
       crawlLinks: false,
-      routes: ['/', '/privacidade', '/termos'],
+      routes: ['/', '/privacidade', '/termos', '/admin', '/admin/login', '/admin/audit'],
     },
   },
 

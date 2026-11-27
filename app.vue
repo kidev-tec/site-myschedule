@@ -31,6 +31,15 @@ const schema = [
     description: site.seo.description,
     offers: { '@type': 'Offer', price: '29.90', priceCurrency: 'BRL' },
   },
+  {
+    '@type': 'FAQPage',
+    '@id': `${siteUrl}/#faq`,
+    mainEntity: site.faq.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  },
 ]
 
 useHead({
@@ -46,6 +55,8 @@ useHead({
 
 <template>
   <div>
-    <NuxtPage />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </div>
 </template>

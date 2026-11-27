@@ -55,17 +55,26 @@ onBeforeUnmount(() => {
           <p class="mt-3 text-white/80">
             {{ slides[index]!.description }}
           </p>
-          <div class="mt-6 flex gap-2" role="tablist" aria-label="Segmentos">
+          <div
+            class="mt-6 flex gap-1.5"
+            role="tablist"
+            aria-label="Segmentos"
+          >
             <button
               v-for="(slide, i) in slides"
               :key="slide.title"
               type="button"
-              class="size-2.5 rounded-full transition-colors"
-              :class="i === index ? 'bg-agenva-sky' : 'bg-white/30 hover:bg-white/50'"
+              role="tab"
+              class="flex size-6 items-center justify-center"
               :aria-label="`Ver ${slide.title}`"
-              :aria-current="i === index"
+              :aria-selected="i === index"
               @click="go(i)"
-            />
+            >
+              <span
+                class="size-2.5 rounded-full transition-colors"
+                :class="i === index ? 'bg-agenva-blue' : 'bg-white/30 hover:bg-white/50'"
+              />
+            </button>
           </div>
         </div>
       </div>

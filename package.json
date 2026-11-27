@@ -5,7 +5,16 @@
   "private": true,
   "type": "module",
   "packageManager": "pnpm@12.21.0",
-  "pnpm": {},
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp",
+      "esbuild",
+      "@tailwindcss/oxide",
+      "unrs-resolver",
+      "protobufjs",
+      "@firebase/util"
+    ]
+  },
   "engines": {
     "node": ">=24.6.0",
     "pnpm": ">=11.20.0"
@@ -22,9 +31,12 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@pinia/nuxt": "^1.0.3",
+    "firebase": "^13.4.0",
     "nuxt": "^4.6.4",
+    "pinia": "^4.1.0",
     "vue": "^3.5.45",
-    "vue-router": "^5.4.0"
+    "vue-router": "5.4.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
