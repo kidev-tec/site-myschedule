@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- URL canônica PROVISÓRIA (G-S5 pendente). Fonte única: data/site.ts (siteUrl).
+<!-- URL canônica definitiva (G-S5). Fonte única: data/site.ts (siteUrl).
      Atualizar este arquivo ao trocar NUXT_PUBLIC_SITE_URL/domínio definitivo. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
