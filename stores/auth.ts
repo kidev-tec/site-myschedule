@@ -95,8 +95,18 @@ export const useAuthStore = defineStore("auth", {
         await signInWithEmailAndPassword(auth, normalized, password);
         // onAuthStateChanged faz a checagem de role na API
         return true;
-      } catch {
-        this.error = "E-mail ou senha inválidos.";
+      } catch (e) {
+        const code = (e as { code?: string })?.code ?? "";
+        console.error("[auth.login] firebase error code:", code, JSON.stringify(String(e)));
+        if (code === "auth/invalid-credential" || code === "auth/wrong-password" || code === "auth/user-not-found") {
+          this.error = "E-mail ou senha inválidos.";
+        } else if (code === "auth/too-many-requests") {
+          this.error = "Muitas tentativas. Aguarde alguns minutos.";
+        } else if (code === "auth/network-request-failed" || code === "auth/internal-error") {
+          this.error = "Falha de conexão. Verifique a internet e tente novamente.";
+        } else {
+          this.error = "Falha de conexão. Verifique a internet e tente novamente.";
+        }
         return false;
       } finally {
         this.loading = false;
