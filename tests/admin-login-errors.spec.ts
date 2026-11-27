@@ -15,7 +15,7 @@ vi.mock("firebase/auth", async (orig) => {
   const actual = await orig<typeof import("firebase/auth")>();
   return {
     ...actual,
-    signInWithEmailAndPassword: vi.fn((_a: unknown, e: string, _p: string) => {
+    signInWithEmailAndPassword: vi.fn((_a: unknown, e: string) => {
       if (e === "ok@teste.com") return Promise.resolve({ user: { uid: "u1" } });
       const err = new Error("firebase") as Error & { code: string };
       err.code = loginErrors.code;

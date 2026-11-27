@@ -16,7 +16,7 @@ useHead({
   ],
 })
 
-const goHome = () => clearError({ redirect: '/' })
+const goHome = () => navigateTo('/')
 </script>
 
 <template>
@@ -31,7 +31,9 @@ const goHome = () => clearError({ redirect: '/' })
       width="180"
       height="48"
     >
-    <p class="mt-10 text-6xl font-bold text-agenva-navy">{{ error.statusCode || 'Erro' }}</p>
+    <p class="mt-10 text-6xl font-bold text-agenva-navy">
+      {{ error.statusCode || 'Erro' }}
+    </p>
     <h1 class="mt-4 text-2xl font-semibold text-agenva-navy">
       {{ is404 ? 'Essa página não existe ou foi movida.' : 'Algo inesperado aconteceu.' }}
     </h1>
