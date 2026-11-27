@@ -51,9 +51,8 @@ scripts/gen-assets.mjs  regenera assets de marca a partir do PNG oficial
 ## URL canônica (G-S5)
 
 `siteUrl` em `data/site.ts` (env `NUXT_PUBLIC_SITE_URL`) é a fonte única do
-canonical/OG. `public/robots.txt` e `public/sitemap.xml` referenciam a URL
-provisória `https://agenva-site.vercel.app` — atualizar os três ao definir
-o domínio definitivo.
+canonical/OG. Domínio definitivo: `https://agenva.app.br` (também em
+`public/robots.txt` e `public/sitemap.xml` — atualizar os três juntos).
 
 ## Gates externos pendentes
 
@@ -62,15 +61,17 @@ o domínio definitivo.
 | G-S1 | URL TestFlight (CTA real de download) | pendente — CTA aponta para WhatsApp/âncora |
 | G-S2 | planos reais Asaas (preço na home) | pendente — seção "Planos em breve", sem preço |
 | G-S3 | SVGs finais de marca | pendente — assets derivados do PNG oficial do app |
-| G-S4 | acesso ao projeto Vercel | preview público |
-| G-S5 | domínio definitivo | canonical/sitemap/OG provisórios |
+| G-S4 | hospedagem | resolvido — Hostinger (agenva.app.br) |
+| G-S5 | domínio definitivo | resolvido — agenva.app.br |
 
-## Deploy (Vercel, ADR-S04)
+## Deploy (Hostinger, agenva.app.br)
 
-- Framework Preset: **Nuxt** · Build: `pnpm generate` · Output: `.output/public`
-- Node `>=24.6` · pnpm `11.20+`
-- `NUXT_PUBLIC_SITE_URL` = URL de preview da Vercel (atualizar no domínio final)
-- **Nenhuma função Nitro** é criada — output é 100% estático.
+- Hospedagem compartilhada Hostinger, pasta `domains/agenva.app.br/public_html`.
+- `cp .env.example .env` e preencher (Firebase Web + admins; só o `/admin` depende deles).
+- `./scripts/deploy-hostinger.sh --dry-run` para conferir; sem a flag publica
+  (lint, typecheck, `pnpm generate`, testes e `rsync --delete` via alias SSH `hostinger`).
+- `public/.htaccess` força HTTPS sem www, serve `404.html` e cai no `200.html` em `/admin/*`.
+- Node `>=24.6` · pnpm `11.20+` · **nenhuma função Nitro** — output 100% estático.
 
 ## Regras do projeto
 
