@@ -64,14 +64,17 @@ canonical/OG. Domínio definitivo: `https://agenva.app.br` (também em
 | G-S4 | hospedagem | resolvido — Hostinger (agenva.app.br) |
 | G-S5 | domínio definitivo | resolvido — agenva.app.br |
 
-## Deploy (Hostinger, agenva.app.br)
+## Deploy (Hostinger hPanel, app Node.js — agenva.app.br)
 
-- Hospedagem compartilhada Hostinger, pasta `domains/agenva.app.br/public_html`.
-- `cp .env.example .env` e preencher (Firebase Web + admins; só o `/admin` depende deles).
-- `./scripts/deploy-hostinger.sh --dry-run` para conferir; sem a flag publica
-  (lint, typecheck, `pnpm generate`, testes e `rsync --delete` via alias SSH `hostinger`).
-- `public/.htaccess` força HTTPS sem www, serve `404.html` e cai no `200.html` em `/admin/*`.
-- Node `>=24.6` · pnpm `11.20+` · **nenhuma função Nitro** — output 100% estático.
+- Publicado como **app Node.js** no hPanel: a Hostinger roda `pnpm install` e
+  `nuxt build` e serve via Passenger (`server/index.mjs` gerado pelo Nitro).
+  As páginas continuam pré-renderizadas; o Node só entrega os arquivos.
+- Variáveis de ambiente ficam no hPanel (lista em `.env.example`).
+  `NUXT_PUBLIC_SITE_URL` **com** `https://` — sem ele canonical/OG saem relativos.
+- Redirecionamento `www` → `agenva.app.br`: configurado no hPanel (o `.htaccess`
+  de `public_html` é gerado pela Hostinger para o Passenger; não editar).
+- Novo deploy: hPanel → Sites → agenva.app.br → Implantar novamente.
+- Node `>=24.6` · pnpm `11.20+`.
 
 ## Regras do projeto
 
