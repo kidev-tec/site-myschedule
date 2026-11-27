@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+/* ADR-S03 — tokens AGENVA no Tailwind v4 */
+@theme {
+  --color-agenva-blue: #1e96e8;
+  --color-agenva-navy: #16325c;
+  --color-agenva-sky: #54b7ea;
+  --color-agenva-cloud: #f8f9fa;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+/* Base mobile-first */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-agenva-cloud);
+  color: var(--color-agenva-navy);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Acessibilidade: foco visível (PLAN passo 3) */
+:where(a, button, summary):focus-visible {
+  outline: 3px solid var(--color-agenva-navy);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Nav do header: rolável sem quebrar layout em 360px */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
