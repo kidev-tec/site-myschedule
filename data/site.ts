@@ -3,7 +3,9 @@
 
 /** R4/G-S5 — URL canônica provisória. Única fonte de canonical/OG/sitemap.
  *  Atualizar aqui (e em public/sitemap.xml) somente após o domínio definitivo. */
-export const siteUrl = (process.env.NUXT_PUBLIC_SITE_URL || 'https://agenva.app.br').replace(/\/+$/, '')
+const rawSiteUrl = (process.env.NUXT_PUBLIC_SITE_URL || 'https://agenva.app.br').trim().replace(/\/+$/, '')
+// Sem esquema, canonical/OG/JSON-LD viram caminhos relativos (bug visto em produção).
+export const siteUrl = /^https?:\/\//i.test(rawSiteUrl) ? rawSiteUrl : `https://${rawSiteUrl}`
 
 export const site = {
   brand: {
